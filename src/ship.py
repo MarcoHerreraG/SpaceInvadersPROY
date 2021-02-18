@@ -5,7 +5,7 @@ class Ship:
         self.screen = app.screen
         self.screen_rect = app.screen.get_rect()
         self.image = pygame.image.load("")
-        self.rect = self.get_rect()
+        self.rect = self.image.get_rect()
         self.rect.midbottom = self.screen_rect.midbottom
         self.speed = 0.15
         self.x = float(self.rect.x)
