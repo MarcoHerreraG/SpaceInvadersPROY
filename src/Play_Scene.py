@@ -17,11 +17,20 @@ class Play_Scene(Scene):
 
     def process_events(self, event):
         if event.type == pygame.KEYDOWN:
-            self.app.change_scene('intro')
-            print('', pygame.key)
+            if event.key == pygame.K_x:
+                pass
+            elif event.key == pygame.K_a:
+                self.ship.move_left = True
+            elif event.key == pygame.K_d:
+                self.ship.move_right = True
+        if event.type == pygame.KEYUP:
+            if event.key == pygame.K_a:
+                self.ship.move_left = False
+            elif event.key == pygame.K_d:
+                self.ship.move_right = False
 
     def update(self):
-        pass
+        self.ship.update()
 
     def draw(self):
         self.screen.fill((225, 225, 225))
