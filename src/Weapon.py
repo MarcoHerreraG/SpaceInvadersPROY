@@ -5,14 +5,14 @@ class Weapon:
     def __init__(self):
         
         self.Balas = []
-        self.count = 20
-        self.bullet_sprite = pygame.image.load("assets/images/bala_buena.png")    
-        self.shoot_sound = pygame.mixer.Sound("assets/sounds/shoot_sound.wav")
-            
+        self.count = 20 
+        self.shoot_sound = pygame.mixer.Sound("Assets/Audio/Laser_Shoot.wav")
+        self.Image2 = pygame.image.load("Assets/Image/Bala.png")
+        
     
     def add_bullet(self):
         for i in range (self.count):
-            bullet = BalaNORM()
+            bullet = BalaNORM(self.Image2)
             self.Balas.append(bullet)
 
     def update(self):
@@ -26,10 +26,10 @@ class Weapon:
     def shoot(self, x, y):
         self.add_bullet()        
         for bullet in self.Balas:
-            if bullet.is_active == False:
+            if bullet.active == False:
                 pygame.mixer.Sound.play(self.shoot_sound)
                 bullet.rect.x = x
                 bullet.rect.y = y
-                bullet.is_active = True
+                bullet.active = True
                 print(self.count)
                 return
