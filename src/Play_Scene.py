@@ -28,6 +28,8 @@ class Play_Scene(Scene):
                 self.ship.move_left = False
             elif event.key == pygame.K_d:
                 self.ship.move_right = False
+        if event.type == pygame.MOUSEBUTTONUP:
+            self.ship.Disparar()
 
     def update(self):
         self.ship.update()
