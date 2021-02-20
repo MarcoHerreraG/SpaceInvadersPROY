@@ -23,6 +23,9 @@ class Play_Scene(Scene):
                 self.ship.move_left = True
             elif event.key == pygame.K_d:
                 self.ship.move_right = True
+            elif event.key == pygame.K_SPACE:
+                print("espacio")
+                self.ship.DispararESP()
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_a:
                 self.ship.move_left = False

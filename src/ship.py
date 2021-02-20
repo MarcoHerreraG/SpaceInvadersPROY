@@ -29,4 +29,7 @@ class Ship:
         self.Weapon.update()
 
     def Disparar(self):
-        self.Weapon.shoot(self.rect.x + 20, self.rect.y)
+        self.Weapon.shoot(self.rect.x + 18, self.rect.y)
+
+    def DispararESP(self):
+        self.Weapon.shootESP(self.rect.x+18, self.rect.y)
