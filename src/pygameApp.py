@@ -1,6 +1,7 @@
 import pygame
 from Intro_Scene import Intro_Scene
 from Play_Scene import Play_Scene
+from Game_Over import Game_Over
 
 class pygameApp():
     def __init__(self):
@@ -16,7 +17,7 @@ class pygameApp():
         self.screen = pygame.display.set_mode((self.width, self.height))
         self.clock = pygame.time.Clock()
         self.load_assets()
-        self.scenes = {'intro': Intro_Scene(self), 'play': Play_Scene(self)}
+        self.scenes = {'intro': Intro_Scene(self), 'play': Play_Scene(self), 'over' : Game_Over(self)}
         self.change_scene('intro')
 
     def change_scene(self, scene_name):

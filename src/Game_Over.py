@@ -1,19 +1,17 @@
 from Scene import Scene
 import pygame
 
-
-
-class Intro_Scene(Scene):
+class Game_Over(Scene):
     def __init__(self, app):
         self.app = app
         self.screen = app.screen
-        self.title = app.font.render("Invaders", True, (255,255,255))
+        self.title = app.font.render("Perdiste", True, (255,255,255))
         self.title_rect = self.title.get_rect()
         self.title_rect.center = (app.width//2, app.height//2)
-        self.subtitle = app.font.render("Presiona Enter para iniciar", True, (255,255,255))
+        self.subtitle = app.font.render("Presiona R para reiniciar", True, (255,255,255))
         self.subtitle_rect = self.subtitle.get_rect()
-        self.subtitle_rect.center = (app.width//2, app.height//2 + 200)
-        super().__init__('IntroScene') 
+        self.subtitle_rect.center = (app.width//2, app.height//2+200)
+        super().__init__('GameOver') 
         
     def start(self):
         
@@ -22,8 +20,9 @@ class Intro_Scene(Scene):
     
     def process_events(self, event):
         if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_RETURN:
+            if event.key == pygame.K_r:
                 self.app.change_scene('play')
+                print('se presiono una tecla')
             
     def update(self):
         pass
@@ -35,4 +34,3 @@ class Intro_Scene(Scene):
         self.screen.blit(self.subtitle, self.subtitle_rect)
     def exit(self):
         print('termina: ', self.name)
-

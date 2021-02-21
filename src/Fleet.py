@@ -28,6 +28,6 @@ class Fleet:
 
             if ENEM.Checar_Borde_INF():
                 
-                #self.app.change_scene('gameover')
+                self.app.change_scene('over')
                 self.ENEMS.clear()
                 print("perdiste")

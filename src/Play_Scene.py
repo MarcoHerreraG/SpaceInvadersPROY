@@ -21,7 +21,8 @@ class Play_Scene(Scene):
 
     def start(self):
         print('Se inicia: ', self.name)
-        self.Fleet.create_fleet()
+        if not self.Fleet.ENEMS:
+            self.Fleet.create_fleet()
 
     def process_events(self, event):
         if event.type == pygame.KEYDOWN:
