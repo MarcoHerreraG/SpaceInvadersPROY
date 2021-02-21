@@ -16,6 +16,7 @@ class Play_Scene(Scene):
         self.Puntuacion = Puntuacion(app)
         self.Fleet = Fleet(self)
         self.Muerto = pygame.mixer.Sound("Assets/Audio/Muerto.wav")
+        self.Fondo = pygame.image.load("Assets/Image/Space.png")
         super().__init__('PlayScene')
 
 
@@ -72,7 +73,7 @@ class Play_Scene(Scene):
             self.Fleet.create_fleet()
 
     def draw(self):
-        self.screen.fill((225, 225, 225))
+        self.screen.blit(self.Fondo, (0, 0))
         #pygame.draw.circle(self.screen, (0, 0, 0), (self.app.width/2, self.app.height/2), 30)
         self.ship.draw()
         self.Puntuacion.draw()
