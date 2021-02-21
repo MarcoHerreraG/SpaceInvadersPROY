@@ -10,9 +10,10 @@ class Puntuacion:
 
     def update(self):
         self.font=pygame.font.Font("Assets/Fonts/papercut.ttf", 32)
-        self.score_letters = self.font.render("Puntos : %d " % (self.Puntos), True, (0,0,0))
+        self.score_letters = self.font.render("Puntos : %d " % (self.Puntos), True, (255,255,255))
         self.score_rect = self.score_letters.get_rect()
         self.score_rect.center = (100, 20)
 
     def Resta(self):
-        self.Puntos = 0
+        if(self.Puntos > 4):
+            self.Puntos = 0
