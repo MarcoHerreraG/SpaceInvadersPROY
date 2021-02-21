@@ -26,7 +26,7 @@ class pygameApp():
         self.active_scene.start()
 
     def load_assets(self):
-        pass
+        self.font=pygame.font.Font("Assets/Fonts/papercut.ttf", 40)
 
     def process_events(self):
         for event in pygame.event.get():
