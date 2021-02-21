@@ -7,12 +7,11 @@ class Weapon:
         
         self.Balas = []
         self.Balas2 = []
-        self.count = 20 
+        self.count = 10 
         self.countEspecial = 2
         self.shoot_sound = pygame.mixer.Sound("Assets/Audio/Laser_Shoot.wav")
         self.Image = pygame.image.load("Assets/Image/BalaESP.png")
         self.Image2 = pygame.image.load("Assets/Image/Bala.png")
-        
     
     def add_bullet(self):
         for i in range (self.count):
@@ -37,7 +36,8 @@ class Weapon:
             bullet.draw(screen)
 
     def shoot(self, x, y):
-        self.add_bullet()        
+        if len(self.Balas) < 1:
+            self.add_bullet()
         for bullet in self.Balas:
             if bullet.active == False:
                 pygame.mixer.Sound.play(self.shoot_sound)

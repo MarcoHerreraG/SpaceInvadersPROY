@@ -9,8 +9,8 @@ class ENEM():
         self.rect.y = y
         self.x = float(self.rect.x)
         self.y = float(self.rect.y)
-        self.Xspeed = 1.5
-        self.Yspeed = 0.2
+        self.Xspeed = 0.5
+        self.Yspeed = 0.1
 
     def draw(self):
         self.screen.blit(self.image, self.rect)

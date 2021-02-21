@@ -31,5 +31,6 @@ class Ship:
     def Disparar(self):
         self.Weapon.shoot(self.rect.x + 18, self.rect.y)
 
-    def DispararESP(self):
-        self.Weapon.shootESP(self.rect.x+18, self.rect.y)
+    def DispararESP(self, Puntuacion):
+        if(Puntuacion >= 4):
+            self.Weapon.shootESP(self.rect.x+18, self.rect.y)

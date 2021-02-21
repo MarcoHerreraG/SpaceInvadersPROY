@@ -10,12 +10,11 @@ class Fleet:
         self.screen = self.app.screen
         self.Orientacion = 1
         self.ENEMS = []
-        self.create_fleet()
         self.score = Puntuacion(self.app)
         
     def create_fleet(self):
-        for i in range(30, self.app.width - 100, 120):
-            for j in range(30, int(self.app.height/2), 80):
+        for i in range(40, self.app.width - 100, 200):
+            for j in range(4, int(self.app.height/2), 80):
                 self.ENEM = ENEM(i, j, self)
                 self.ENEMS.append(self.ENEM)
     def draw(self):
