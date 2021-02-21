@@ -2,7 +2,7 @@ import pygame
 from Intro_Scene import Intro_Scene
 from Play_Scene import Play_Scene
 from Game_Over import Game_Over
-
+from Instruction_Scene import Instrucciones
 class pygameApp():
     def __init__(self):
         self.running = True
@@ -16,7 +16,7 @@ class pygameApp():
         pygame.init()
         self.screen = pygame.display.set_mode((self.width, self.height))
         self.load_assets()
-        self.scenes = {'intro': Intro_Scene(self), 'play': Play_Scene(self), 'over' : Game_Over(self)}
+        self.scenes = {'intro': Intro_Scene(self), 'play': Play_Scene(self), 'over' : Game_Over(self), 'instr' : Instrucciones(self)}
         self.change_scene('intro')
 
     def change_scene(self, scene_name):
@@ -26,7 +26,7 @@ class pygameApp():
         self.active_scene.start()
 
     def load_assets(self):
-        self.font=pygame.font.Font("Assets/Fonts/papercut.ttf", 40)
+        self.font=pygame.font.Font("Assets/Fonts/papercut.ttf", 30)
 
     def process_events(self):
         for event in pygame.event.get():

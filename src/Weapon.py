@@ -11,7 +11,7 @@ class Weapon:
         self.countEspecial = 2
         self.shoot_sound = pygame.mixer.Sound("Assets/Audio/Laser_Shoot.wav")
         self.Image = pygame.image.load("Assets/Image/BalaESP.png")
-        self.Image2 = pygame.image.load("Assets/Image/Bala.png")
+        self.Image2 = pygame.image.load("Assets/Image/Balas.png")
     
     def add_bullet(self):
         for i in range (self.count):

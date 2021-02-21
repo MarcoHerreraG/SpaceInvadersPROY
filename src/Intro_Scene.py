@@ -13,6 +13,9 @@ class Intro_Scene(Scene):
         self.subtitle = app.font.render("Presiona Enter para iniciar", True, (255,255,255))
         self.subtitle_rect = self.subtitle.get_rect()
         self.subtitle_rect.center = (app.width//2, app.height//2 + 200)
+        self.subtitle2 = app.font.render("Presiona I para ver las instrucciones de la habilidad", True, (255,255,255))
+        self.subtitle2_rect = self.subtitle.get_rect()
+        self.subtitle2_rect.center = (app.width//2-175, app.height//2 + 120)
         super().__init__('IntroScene') 
         
     def start(self):
@@ -24,6 +27,8 @@ class Intro_Scene(Scene):
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RETURN:
                 self.app.change_scene('play')
+            elif event.key == pygame.K_i:
+                self.app.change_scene('instr')
             
     def update(self):
         pass
@@ -32,6 +37,7 @@ class Intro_Scene(Scene):
         
         self.screen.fill((0,0,0))
         self.screen.blit(self.title, self.title_rect)
+        self.screen.blit(self.subtitle2, self.subtitle2_rect)
         self.screen.blit(self.subtitle, self.subtitle_rect)
     def exit(self):
         print('termina: ', self.name)
